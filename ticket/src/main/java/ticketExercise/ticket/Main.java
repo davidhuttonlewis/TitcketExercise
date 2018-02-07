@@ -11,6 +11,7 @@ public class Main {
 		booking.addTicketToBooking("standard");
 
 		System.out.println(logic.totalBookingCost(booking));
+		
 
 	}
 

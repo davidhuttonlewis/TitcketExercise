@@ -2,7 +2,6 @@ package ticketExercise.ticket;
 
 public class Logic {
 
-	private boolean isWednesday = false;
 
 	int totalBookingCost(Booking booking) {
 
@@ -10,14 +9,16 @@ public class Logic {
 		for (int i = 0; i < booking.getBookingSize(); i++) {
 
 			bookingCost += booking.getTicketFromBooking(i);
-
 		}
-		if (isWednesday) {
-			bookingCost -= 2 * booking.getBookingSize();
-		}
+		
+//		if (isWednesday) {
+//			bookingCost -= 2 * booking.getBookingSize();
+//		}
 
 		return bookingCost;
 
 	}
+	
+	
 
 }
