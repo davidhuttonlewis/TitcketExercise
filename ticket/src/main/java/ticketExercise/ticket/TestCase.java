@@ -6,42 +6,32 @@ public class TestCase extends junit.framework.TestCase {
 
 	@Test
 	public void testTicketPriceStudent() {
-		Ticket t1 = new Ticket();
-		assertEquals(6, t1.ticketPrice("student"));
+		assertEquals(6, People.STUDENT.getPrice());
 	}
 
 	@Test
 	public void testTicketPriceOAP() {
-		Ticket t1 = new Ticket();
-		assertEquals(6, t1.ticketPrice("oap"));
+		assertEquals(6, People.OAP.getPrice());
 	}
 
 	@Test
 	public void testTicketPriceStandard() {
-		Ticket t1 = new Ticket();
-		assertEquals(8, t1.ticketPrice("standard"));
+		assertEquals(8, People.STANDARD.getPrice());
 	}
 	
 	@Test
 	public void testTicketPriceChild() {
-		Ticket t1 = new Ticket();
-		assertEquals(4, t1.ticketPrice("child"));
+		assertEquals(4, People.CHILD.getPrice());
 	}
 	
-	@Test
-	public void testTicketPriceInvalid() {
-		Ticket t1 = new Ticket();
-		assertEquals(0, t1.ticketPrice("gjhgjhg"));
-	}
-
 	@Test
 	public void testTotalPrice() {
 
 		Booking booking = new Booking();
 		Logic logic = new Logic();
 
-		booking.addTicketToBooking("student");
-		booking.addTicketToBooking("standard");
+		booking.addTicketToBooking(People.STUDENT);
+		booking.addTicketToBooking(People.STANDARD);
 
 		assertEquals(14, logic.totalBookingCost(booking));
 	}
@@ -51,20 +41,10 @@ public class TestCase extends junit.framework.TestCase {
 		Booking booking = new Booking();
 		Logic logic = new Logic();
 
-		booking.addTicketToBooking("student");
-		booking.addTicketToBooking("standard");
+		booking.addTicketToBooking(People.STUDENT);
+		booking.addTicketToBooking(People.STANDARD);
 		
-		assertEquals(10, logic.deals(Day.WEDNESDAY,logic.totalBookingCost(booking),2));
+		assertEquals(10, logic.deals(Day.WEDNESDAY,logic.totalBookingCost(booking)));
 	}
 	
-//	@Test
-//	public void testUserEntry() {
-//
-//		//userInerface.userEntry("student");
-//		//userInerface.userEntry("student");
-//		
-//		
-//	}
-//	
-
 }
