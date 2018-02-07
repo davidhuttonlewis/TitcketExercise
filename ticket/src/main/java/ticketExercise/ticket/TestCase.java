@@ -54,7 +54,7 @@ public class TestCase extends junit.framework.TestCase {
 		booking.addTicketToBooking("student");
 		booking.addTicketToBooking("standard");
 		
-		assertEquals(14, logic.deals(Day.WEDNESDAY,logic.totalBookingCost(booking)));
+		assertEquals(10, logic.deals(Day.WEDNESDAY,logic.totalBookingCost(booking),2));
 	}
 	
 //	@Test

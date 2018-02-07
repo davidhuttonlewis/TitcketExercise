@@ -19,6 +19,13 @@ public class Logic {
 
 	}
 	
-	
+	int deals(Day day, int booking, int ticketNumber) {
+		
+		switch (day) {
+		case WEDNESDAY: return booking -= (2 * ticketNumber);
+		
+		default: return booking;
+	}
+	}
 
 }
